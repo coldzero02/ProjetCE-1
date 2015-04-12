@@ -17,7 +17,7 @@ import services.Metier;
 public class CEController {
 
 	@Autowired         
-	Metier services;    // services est un interface: spring, grace à @Autowired, lui associe une instanciation des l'objet qcmService définit dans spring-beans.xml
+	Metier services;    
 	
 	@RequestMapping(value="/accueil")
 	public String accueil(Model model){
@@ -67,12 +67,10 @@ public class CEController {
 			case "Employe":
 				espace = "Espace Employé";
 				model.addAttribute("espace", espace);
-				//model.addAttribute("liste???", services.consulterQcm(userEmp.getId()));
 				return "espace-employe";	
 			case "Prestataire":
 				espace = "Espace Prestataire";
 				model.addAttribute("espace", espace);
-				//model.addAttribute("liste???", services.consulterQcm(userPres.getId()));
 				return "espace-prestataire";	
 			case "Tresorier":
 				espace = "Espace Tresorier";
@@ -83,7 +81,6 @@ public class CEController {
 				model.addAttribute("displayMdp", "none"); 
 				model.addAttribute("displayPrestation", "none"); 
 				model.addAttribute("displayBudget", "none"); 
-				//model.addAttribute("liste???", services.consulterQcm(userTres.getId()));
 				return "espace-tresorier";	
 			default:
 				return "accueil";
@@ -202,70 +199,4 @@ public class CEController {
 		model.addAttribute("displayBudget", "block"); 
 		return "espace-tresorier";
 	}
-	/*
-	 * 
-	@RequestMapping(value="/nouveauQcm")
-	public String nouveauProduit(Model model, @RequestParam(value="idEmp") Integer idEmp,											 
-											  @RequestParam(value="question") String question,
-											  @RequestParam(value="choix1") String choix1,
-											  @RequestParam(value="choix2") String choix2,
-											  @RequestParam(value="choix3") String choix3,
-											  @RequestParam(value="choix4") String choix4,
-											  @RequestParam(value="bonneRep") String bonneRep ){
-		System.out.println("\n\n");
-		System.out.println("---------------- Debut Test /nouveauQcm dans le controller -------------");
-		System.out.println("niveau1 ");
-		
-		Employe user = services.getEmploye(idEmp);
-		System.out.println("niveau2: idEmp = "+idEmp + "User: "+user.toString());
-		
-	    String dateCreation;
-        dateCreation = "2000";
-        System.out.println("niveau3 ");
-        
-        Qcm qcm = new Qcm(dateCreation, question, user.getId(), choix1, choix2, choix3, choix4, bonneRep);
-        System.out.print("niveau4 : Qcm à ajouter: ");qcm.show();
-		services.ajouterQcm(qcm);	
-		model.addAttribute("listeQcms", services.consulterQcm(user.getId())); 
-		System.out.println("niveau5 ");       
-		model.addAttribute("qcm", qcm);
-		System.out.println("niveau6 : size liste consulter qcm: "+services.consulterQcm(user.getId()).size());
-		model.addAttribute("user", user);
-		System.out.println("utilisateur: "+user.toString()); //user.show();
-		String espace = "Espace Employé";
-		String bonjour  = "Bonjour "+user.getNom() +" "+ user.getPrenom();
-		
-		System.out.println(bonjour);
-		model.addAttribute("bonjour", bonjour);
-		model.addAttribute("espace", espace);
-		
-		System.out.println("---------------- Fin Test /nouveauQcm dans le controller -------------");
-		System.out.println("\n\n");
-		return "espace-employe";
-	}
-	
-	
-	@RequestMapping(value="/supprimer")
-	public String supprimerProduit(Model model, @RequestParam(value="id") Integer id,
-												@RequestParam(value="idEmp") Integer idEmp){
-		System.out.println("\n\n");
-		System.out.println("---------------- Debut Test /supprimer dans le controller -------------");
-		Employe user = services.getEmploye(idEmp);
-		user.show();
-		System.out.println("id QCMMMMMM: "+id);
-		services.supprimerQcm(id); 
-		model.addAttribute("listeQcms", services.consulterQcm(idEmp));
-		model.addAttribute("user", user);
-		
-		String espace = "Espace Employé";
-		String bonjour  = "Bonjour "+user.getNom() +" "+ user.getPrenom();
-		model.addAttribute("espace", espace);
-		model.addAttribute("bonjour", bonjour);
-		
-		System.out.println("---------------- Fin Test /supprimer dans le controller -------------");
-		System.out.println("\n\n");
-		
-		return "espace-employe";
-	}
-	*/
 }

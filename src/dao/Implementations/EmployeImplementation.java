@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import util.HibernateUtil;
 
 public class EmployeImplementation implements EmployeInterface {
-
+	// implem emplo
 	@Override
 	public void init() {
 
