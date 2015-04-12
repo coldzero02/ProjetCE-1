@@ -1,0 +1,132 @@
+/* Général ------------------------------------------------------------------------------------- */
+
+body, p, legend, label, input {
+    font: normal 8pt verdana, helvetica, sans-serif;
+}
+body{
+	background: url('../images/fond_1.jpg') top center no-repeat fixed;
+	/*background: url('../images/fond_2.jpg') top center no-repeat fixed;*/
+}
+.page{
+	width: 620px;
+	margin:auto;
+	/*height: 1000px;*/
+}
+.entete{
+	width: 100%;
+	height:70px
+}
+.logo {
+	float:left;
+	height:100%;
+	width:160px;
+	background: url('../images/logo.jpg') ;
+	background-size: 100% 100%;
+}
+ul{
+	padding:0px;
+}
+ul.menu{
+	height:100%;
+}
+li {
+  padding: 0;  
+  list-style: none;  
+  background-color: #000;
+  
+}
+.menu > li {
+  float: left;
+  width: 107px;
+  margin: 0 0 0 8px;
+  height:100%;
+}
+.menu > li > form, .menu-gauche > li > form, .menu-accueil > li > form{
+	color:white;
+	text-align: center;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+ li > form > button{
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+ul.menu-accueil {
+	height:168px;
+}
+.menu-accueil > li {
+  float: left;
+  width: 306px;
+  height:100%;
+}
+.menu-accueil > li:last-child {
+  margin: 0 0 0 8px;
+}
+ul.menu-gauche{
+	width:160px;
+	float: left;
+}
+.menu-gauche > li {
+  width: 100%;
+  margin: 0 0 8px 0;
+  height:80px;
+}
+
+.coeur{
+  float: left;
+  margin-top: 11px;
+  margin-left: 8px;
+}
+.infos-perso, .mdp, .prestations, .budget{
+  width: 450px;
+  height: 165px;
+  background-color: white;
+} 
+/* Forms --------------------------------------------------------------------------------------- */
+fieldset {
+    padding: 10px;
+    border: 1px #0568CD solid;
+    margin: 10px;
+    width: 350px;
+}
+
+legend {
+    font-weight: bold;
+    color: #0568CD;
+}
+
+form label {
+    float: left;
+    width: 200px;
+    margin: 3px 0px 0px 0px;
+}
+
+form input {
+    margin: 3px 3px 0px 0px;
+    border: 1px #999 solid;
+}
+
+form input.sansLabel {
+    margin-left: 200px;
+}
+
+/* Styles et couleurs -------------------------------------------------------------------------- */
+.requis {
+    color: #c00;
+}
+
+.erreur {
+    color: #900;
+}
+
+.succes {
+    color: #090;
+}
+
+.info {
+    font-style: italic;
+    color: #E8A22B;
+}

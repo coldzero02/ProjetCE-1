@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+              http://www.springframework.org/schema/tx
+              http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+
+<bean class="dao.Implementations.EmployeImplementation" id="emp" init-method="init" ></bean>
+<bean class="dao.Implementations.PrestataireImplementation" id="pres" init-method="init" ></bean>
+<bean class="dao.Implementations.TresorierImplementation" id="tres" init-method="init" ></bean>
+<bean class="dao.Implementations.UtilisateurImplementation" id="user" init-method="init" ></bean>
+
+
+<bean class="services.MetierImplementation" id="CEServices">
+
+	<property name="utilisateur" ref="user"  ></property>
+	<property name="employe" ref="emp"  ></property > 
+	<property name="tresorier" ref="tres"  ></property>
+	<property name="prestataire" ref="pres"  ></property>
+	
+</bean>
+
+
+ </beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="dao.beans.Prestation" table="PRESTATIONS">
+
+	<id name="numero" column="numero">
+		<generator class="native"></generator>
+	</id>
+	
+	<property name="date" column="DATE"></property>
+	<property name="lieu" column="LIEU"></property>
+	<property name="type" column="TYPE"></property>
+	<property name="idUser" column="ID_USER"></property>
+	
+</class>
+
+</hibernate-mapping>
